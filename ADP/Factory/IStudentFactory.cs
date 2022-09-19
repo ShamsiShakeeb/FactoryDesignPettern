@@ -15,5 +15,6 @@ namespace ADP.Factory
         Task DeleteByEmail(string email);
         Task<List<StudentTeacherRelationViewModel>> StudentTeacherRelationByStudentId(int id);
         Task<List<StudentTeacherRelationViewModel>> StudentTeacherRelation();
+        Task<List<StudentViewModel>> Get();
     }
 }

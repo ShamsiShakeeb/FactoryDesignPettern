@@ -29,7 +29,7 @@ namespace ADP.Factory
         public async Task Insert(StudentViewModel studentViewModel)
         {
              var student = _mapper.Map<Student>(studentViewModel);
-            await _studentService.Insert(student);
+             await _studentService.Insert(student);
         }
         public async Task Update(StudentViewModel studentViewModel)
         {
@@ -40,6 +40,15 @@ namespace ADP.Factory
         {
             await _studentService.Delete(id);
         }
+
+        public async Task<List<StudentViewModel>> Get()
+        {
+            var data = await _studentService.Get(x => true);
+            var list = _mapper.Map<List<Student>, List<StudentViewModel>>(data);
+            return list;
+        }
+
+
         public async Task<StudentViewModel> DetailsById(int id)
         {
              var list = await _studentService.Get(x=> x.Id == id);
@@ -53,7 +62,6 @@ namespace ADP.Factory
             var data = list.FirstOrDefault();
             await _studentService.Delete(data.Id);
         }
-
         public async Task<List<StudentTeacherRelationViewModel>> StudentTeacherRelationByStudentId(int id)
         {
             var studentTeacher = await _studentTeacherService.Get(x => x.StudentId == id);

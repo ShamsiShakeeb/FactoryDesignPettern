@@ -16,21 +16,22 @@ namespace ADP.Controllers
         {
             _studentFactory = studentFactory;
         }
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View();
+            var list = await _studentFactory.Get();
+            return View(list);
         }
         public async Task<IActionResult> StudentTeacherReport()
         {
             var list = await _studentFactory.StudentTeacherRelation();
             return View(list);
         }
-        public IActionResult Insert()
+        public IActionResult Create()
         {
             return View();
         }
         [HttpPost]
-        public async Task<IActionResult> Insert(StudentViewModel model)
+        public async Task<IActionResult> Create(StudentViewModel model)
         {
             await _studentFactory.Insert(model);
             return RedirectToAction(actionName: "Index" , controllerName:"Student");

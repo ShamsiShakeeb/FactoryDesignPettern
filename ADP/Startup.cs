@@ -1,4 +1,5 @@
 using ADP.Factory;
+using AutoMapper;
 using BLL;
 using DAL;
 using Microsoft.AspNetCore.Builder;
@@ -31,16 +32,19 @@ namespace ADP
             services.AddDbContext<DatabaseContext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("DevConnection")));
 
-            services.AddSingleton<IStudentRepository, StudentRepository>();
-            services.AddSingleton<ITeacherRepository, TeacherRepository>();
-            services.AddSingleton<IStudentTeacherRepository, StudentTeacherRepository>();
+            services.AddAutoMapper(typeof(Startup));
+            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
-            services.AddSingleton<IStudentService, StudentService>();
-            services.AddSingleton<ITeacherService, TeacherService>();
-            services.AddSingleton<IStudentTeacherService, StudentTeacherService>();
+            services.AddScoped<IStudentRepository, StudentRepository>();
+            services.AddScoped<ITeacherRepository, TeacherRepository>();
+            services.AddScoped<IStudentTeacherRepository, StudentTeacherRepository>();
+
+            services.AddScoped<IStudentService, StudentService>();
+            services.AddScoped<ITeacherService, TeacherService>();
+            services.AddScoped<IStudentTeacherService, StudentTeacherService>();
 
 
-            services.AddSingleton<IStudentFactory, StudentFactory>();
+            services.AddScoped<IStudentFactory, StudentFactory>();
 
 
 
