@@ -1,4 +1,5 @@
 ﻿using DAL;
+using DAL.Repository;
 using Entity;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -10,30 +11,10 @@ using System.Threading.Tasks;
 
 namespace BLL
 {
-    public class StudentTeacherService : IStudentTeacherService
+    public class StudentTeacherService : Repository<StudentTeacher> , IStudentTeacherService
     {
-        private readonly IStudentTeacherRepository _studentTeacherRepository;
-
-        public StudentTeacherService(IStudentTeacherRepository studentTeacherRepository)
+        public StudentTeacherService(DatabaseContext databaseContext) : base(databaseContext)
         {
-            _studentTeacherRepository = studentTeacherRepository;
-        }
-        public async Task Insert(StudentTeacher studentTeacher)
-        {
-            await _studentTeacherRepository.Insert(studentTeacher);
-        }
-        public async Task Update(StudentTeacher studentTeacher)
-        {
-            await _studentTeacherRepository.Update(studentTeacher);
-        }
-        public async Task Delete(int id)
-        {
-            await _studentTeacherRepository.Delete(id);
-        }
-        public async Task<List<StudentTeacher>> Get(Expression<Func<StudentTeacher, bool>> expression)
-        {
-            var list = await _studentTeacherRepository.Get(expression).ToListAsync();
-            return list;
         }
     }
 }

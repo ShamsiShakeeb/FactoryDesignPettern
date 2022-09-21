@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using BLL;
 using Entity;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -38,43 +39,40 @@ namespace ADP.Factory
         }
         public async Task Delete(int id)
         {
-            await _studentService.Delete(id);
+            var data = await _studentService.GetEntity(x => x.Id == id);
+            await _studentService.Delete(data);
         }
 
         public async Task<List<StudentViewModel>> Get()
         {
-            var data = await _studentService.Get(x => true);
+            var data =  await _studentService.GetListAsync(x => true);
             var list = _mapper.Map<List<Student>, List<StudentViewModel>>(data);
             return list;
         }
-
-
         public async Task<StudentViewModel> DetailsById(int id)
         {
-             var list = await _studentService.Get(x=> x.Id == id);
-             var data = list.FirstOrDefault();
+             var data = await _studentService.GetEntity(x=> x.Id == id);
              var model = _mapper.Map<StudentViewModel>(data);
              return model;
         }
         public async Task DeleteByEmail(string email)
         {
-            var list = await _studentService.Get(x => x.Email == email);
-            var data = list.FirstOrDefault();
-            await _studentService.Delete(data.Id);
+            var data = await _studentService.GetEntity(x => x.Email == email);
+            await _studentService.Delete(data);
         }
         public async Task<List<StudentTeacherRelationViewModel>> StudentTeacherRelationByStudentId(int id)
         {
-            var studentTeacher = await _studentTeacherService.Get(x => x.StudentId == id);
-            var teacher = await _teacherService.Get(x=> true);
-            var student = await _studentService.Get(x => x.Id == id);
+            var studentTeacher = _studentTeacherService.Get(x => x.StudentId == id);
+            var teacher = _teacherService.Get(x=> true);
+            var student = await _studentService.GetEntity(x => x.Id == id);
 
             var data = (from a in studentTeacher
                         join b in teacher
                         on a.TeacherId equals b.Id
                         select new StudentTeacherRelationViewModel()
                         {
-                            StudentName = student.FirstOrDefault()?.Name,
-                            StudentEmail = student.FirstOrDefault()?.Email,
+                            StudentName = student.Name,
+                            StudentEmail = student.Email,
                             TeacherName = b.Name,
                             TeacherEmail = b.Email,
                             TeacherAddress = b.Address
@@ -84,11 +82,11 @@ namespace ADP.Factory
         }
         public async Task<List<StudentTeacherRelationViewModel>> StudentTeacherRelation()
         {
-            var studentTeacher = await _studentTeacherService.Get(x=> true);
-            var teacher = await _teacherService.Get(x => true);
-            var student = await _studentService.Get(x=> true);
+            var studentTeacher =  _studentTeacherService.Get(x=> true);
+            var teacher =  _teacherService.Get(x => true);
+            var student =  _studentService.Get(x=> true);
 
-            var data = (from a in studentTeacher
+            var data = await (from a in studentTeacher
                         join b in teacher
                         on a.TeacherId equals b.Id
                         join s in student
@@ -100,7 +98,7 @@ namespace ADP.Factory
                             TeacherName = b.Name,
                             TeacherEmail = b.Email,
                             TeacherAddress = b.Address
-                        }).ToList();
+                        }).ToListAsync();
 
             return data;
         }

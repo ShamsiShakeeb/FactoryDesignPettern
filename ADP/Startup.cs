@@ -2,6 +2,7 @@ using ADP.Factory;
 using AutoMapper;
 using BLL;
 using DAL;
+using DAL.Repository;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -35,9 +36,8 @@ namespace ADP
             services.AddAutoMapper(typeof(Startup));
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
-            services.AddScoped<IStudentRepository, StudentRepository>();
-            services.AddScoped<ITeacherRepository, TeacherRepository>();
-            services.AddScoped<IStudentTeacherRepository, StudentTeacherRepository>();
+           
+            services.AddScoped(typeof(IRepository<>),typeof(Repository<>));
 
             services.AddScoped<IStudentService, StudentService>();
             services.AddScoped<ITeacherService, TeacherService>();
