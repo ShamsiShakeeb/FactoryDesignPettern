@@ -42,7 +42,6 @@ namespace ADP.Factory
             var data = await _studentService.GetEntity(x => x.Id == id);
             await _studentService.Delete(data);
         }
-
         public async Task<List<StudentViewModel>> Get()
         {
             var data =  await _studentService.GetListAsync(x => true);
