@@ -9,7 +9,7 @@ using ViewModel;
 
 namespace ADP.Controllers
 {
-    [Authorize]
+    [Authorize(Roles = "Student")]
     public class StudentController : Controller
     {
         private readonly IStudentFactory _studentFactory;

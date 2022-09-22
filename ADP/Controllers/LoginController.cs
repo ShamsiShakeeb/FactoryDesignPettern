@@ -24,49 +24,49 @@ namespace ADP.Controllers
         {
             return View();
         }
-
         [HttpGet]
         [AllowAnonymous]
         public IActionResult Registration()
         {
             return View();
         }
-
         [HttpPost]
         [AllowAnonymous]
         public async Task<IActionResult> Registration(RegistrationViewModel model)
         {
-            if (!ModelState.IsValid)
+            if (ModelState.IsValid)
+            {
+
+                var user = new ApplicationUser()
+                {
+                    UserName = model.UserName,
+                    Email = model.Email,
+                    PhoneNumber = model.Phone,
+                    Age = model.Age,
+                    Address = model.Address
+                };
+
+                var result = await _userManager.CreateAsync(user, model.Password);
+
+                if (!result.Succeeded)
+                {
+                    foreach (var x in result.Errors)
+                    {
+                        ModelState.AddModelError(string.Empty, x.Description);
+                    }
+                }
+                else
+                {
+                    ViewBag.Message = "Registration Completed!";
+                }
+            }
+            else
             {
                 ModelState.AddModelError(string.Empty, "Validation Error");
-                return View();
             }
-
-            var user = new ApplicationUser()
-            {
-                UserName = model.UserName,
-                Email = model.Email,
-                PhoneNumber = model.Phone,
-                Age = model.Age,
-                Address = model.Address
-            };
-
-            var result = await _userManager.CreateAsync(user, model.Password);
-
-            if (!result.Succeeded)
-            {
-                foreach (var x in result.Errors)
-                {
-                    ModelState.AddModelError(string.Empty, x.Description);
-                }
-                return View();
-            }
-
-            ViewBag.Message = "Registration Completed!";
 
             return View();
         }
-
         [HttpGet]
         [AllowAnonymous]
         [Route("/Account/Login")]
@@ -74,7 +74,6 @@ namespace ADP.Controllers
         {
             return View();
         }
-
         [HttpPost]
         [AllowAnonymous]
         [Route("/Account/Login")]
