@@ -1,4 +1,5 @@
 ﻿using ADP.Factory;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -8,6 +9,7 @@ using ViewModel;
 
 namespace ADP.Controllers
 {
+    [Authorize]
     public class StudentController : Controller
     {
         private readonly IStudentFactory _studentFactory;

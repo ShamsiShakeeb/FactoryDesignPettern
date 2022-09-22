@@ -191,3 +191,10 @@ C:\Users\BS483\source\repos\ADP\ADP\bin\Debug\netcoreapp3.1\BLL.pdb
 C:\Users\BS483\source\repos\ADP\ADP\bin\Debug\netcoreapp3.1\ViewModel.pdb
 C:\Users\BS483\source\repos\ADP\ADP\obj\Debug\netcoreapp3.1\Razor\Views\Student\Create.cshtml.g.cs
 C:\Users\BS483\source\repos\ADP\ADP\obj\Debug\netcoreapp3.1\Razor\Views\Student\Index.cshtml.g.cs
+C:\Users\BS483\source\repos\ADP\ADP\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\BS483\source\repos\ADP\ADP\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\BS483\source\repos\ADP\ADP\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\BS483\source\repos\ADP\ADP\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Core.dll
+C:\Users\BS483\source\repos\ADP\ADP\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Stores.dll
+C:\Users\BS483\source\repos\ADP\ADP\obj\Debug\netcoreapp3.1\Razor\Views\Login\Registration.cshtml.g.cs
+C:\Users\BS483\source\repos\ADP\ADP\obj\Debug\netcoreapp3.1\Razor\Views\Login\Login.cshtml.g.cs
