@@ -1,21 +1,26 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\MIJU\\Desktop\\GGtt\\FactoryDesignPettern\\Entity\\Entity.csproj": {}
+    "C:\\Users\\BS483\\source\\repos\\ADP\\Entity\\Entity.csproj": {}
   },
   "projects": {
-    "C:\\Users\\MIJU\\Desktop\\GGtt\\FactoryDesignPettern\\Entity\\Entity.csproj": {
+    "C:\\Users\\BS483\\source\\repos\\ADP\\Entity\\Entity.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\MIJU\\Desktop\\GGtt\\FactoryDesignPettern\\Entity\\Entity.csproj",
+        "projectUniqueName": "C:\\Users\\BS483\\source\\repos\\ADP\\Entity\\Entity.csproj",
         "projectName": "Entity",
-        "projectPath": "C:\\Users\\MIJU\\Desktop\\GGtt\\FactoryDesignPettern\\Entity\\Entity.csproj",
-        "packagesPath": "C:\\Users\\MIJU\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\MIJU\\Desktop\\GGtt\\FactoryDesignPettern\\Entity\\obj\\",
+        "projectPath": "C:\\Users\\BS483\\source\\repos\\ADP\\Entity\\Entity.csproj",
+        "packagesPath": "C:\\Users\\BS483\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\BS483\\source\\repos\\ADP\\Entity\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\MIJU\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\BS483\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -51,8 +56,7 @@
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -61,7 +65,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.214\\RuntimeIdentifierGraph.json"
         }
       }
     }

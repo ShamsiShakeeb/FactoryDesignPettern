@@ -1,21 +1,26 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\MIJU\\Desktop\\GGtt\\FactoryDesignPettern\\BLL\\BLL.csproj": {}
+    "C:\\Users\\BS483\\source\\repos\\ADP\\BLL\\BLL.csproj": {}
   },
   "projects": {
-    "C:\\Users\\MIJU\\Desktop\\GGtt\\FactoryDesignPettern\\BLL\\BLL.csproj": {
+    "C:\\Users\\BS483\\source\\repos\\ADP\\BLL\\BLL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\MIJU\\Desktop\\GGtt\\FactoryDesignPettern\\BLL\\BLL.csproj",
+        "projectUniqueName": "C:\\Users\\BS483\\source\\repos\\ADP\\BLL\\BLL.csproj",
         "projectName": "BLL",
-        "projectPath": "C:\\Users\\MIJU\\Desktop\\GGtt\\FactoryDesignPettern\\BLL\\BLL.csproj",
-        "packagesPath": "C:\\Users\\MIJU\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\MIJU\\Desktop\\GGtt\\FactoryDesignPettern\\BLL\\obj\\",
+        "projectPath": "C:\\Users\\BS483\\source\\repos\\ADP\\BLL\\BLL.csproj",
+        "packagesPath": "C:\\Users\\BS483\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\BS483\\source\\repos\\ADP\\BLL\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\MIJU\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\BS483\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -28,8 +33,11 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Users\\MIJU\\Desktop\\GGtt\\FactoryDesignPettern\\DAL\\DAL.csproj": {
-                "projectPath": "C:\\Users\\MIJU\\Desktop\\GGtt\\FactoryDesignPettern\\DAL\\DAL.csproj"
+              "C:\\Users\\BS483\\source\\repos\\ADP\\DAL\\DAL.csproj": {
+                "projectPath": "C:\\Users\\BS483\\source\\repos\\ADP\\DAL\\DAL.csproj"
+              },
+              "C:\\Users\\BS483\\source\\repos\\ADP\\Entity\\Entity.csproj": {
+                "projectPath": "C:\\Users\\BS483\\source\\repos\\ADP\\Entity\\Entity.csproj"
               }
             }
           }
@@ -49,8 +57,7 @@
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -59,22 +66,27 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.214\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\MIJU\\Desktop\\GGtt\\FactoryDesignPettern\\DAL\\DAL.csproj": {
+    "C:\\Users\\BS483\\source\\repos\\ADP\\DAL\\DAL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\MIJU\\Desktop\\GGtt\\FactoryDesignPettern\\DAL\\DAL.csproj",
+        "projectUniqueName": "C:\\Users\\BS483\\source\\repos\\ADP\\DAL\\DAL.csproj",
         "projectName": "DAL",
-        "projectPath": "C:\\Users\\MIJU\\Desktop\\GGtt\\FactoryDesignPettern\\DAL\\DAL.csproj",
-        "packagesPath": "C:\\Users\\MIJU\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\MIJU\\Desktop\\GGtt\\FactoryDesignPettern\\DAL\\obj\\",
+        "projectPath": "C:\\Users\\BS483\\source\\repos\\ADP\\DAL\\DAL.csproj",
+        "packagesPath": "C:\\Users\\BS483\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\BS483\\source\\repos\\ADP\\DAL\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\MIJU\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\BS483\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -87,8 +99,8 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Users\\MIJU\\Desktop\\GGtt\\FactoryDesignPettern\\Entity\\Entity.csproj": {
-                "projectPath": "C:\\Users\\MIJU\\Desktop\\GGtt\\FactoryDesignPettern\\Entity\\Entity.csproj"
+              "C:\\Users\\BS483\\source\\repos\\ADP\\Entity\\Entity.csproj": {
+                "projectPath": "C:\\Users\\BS483\\source\\repos\\ADP\\Entity\\Entity.csproj"
               }
             }
           }
@@ -142,8 +154,7 @@
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -152,22 +163,27 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.214\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\MIJU\\Desktop\\GGtt\\FactoryDesignPettern\\Entity\\Entity.csproj": {
+    "C:\\Users\\BS483\\source\\repos\\ADP\\Entity\\Entity.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\MIJU\\Desktop\\GGtt\\FactoryDesignPettern\\Entity\\Entity.csproj",
+        "projectUniqueName": "C:\\Users\\BS483\\source\\repos\\ADP\\Entity\\Entity.csproj",
         "projectName": "Entity",
-        "projectPath": "C:\\Users\\MIJU\\Desktop\\GGtt\\FactoryDesignPettern\\Entity\\Entity.csproj",
-        "packagesPath": "C:\\Users\\MIJU\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\MIJU\\Desktop\\GGtt\\FactoryDesignPettern\\Entity\\obj\\",
+        "projectPath": "C:\\Users\\BS483\\source\\repos\\ADP\\Entity\\Entity.csproj",
+        "packagesPath": "C:\\Users\\BS483\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\BS483\\source\\repos\\ADP\\Entity\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\MIJU\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\BS483\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -203,8 +219,7 @@
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -213,7 +228,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.214\\RuntimeIdentifierGraph.json"
         }
       }
     }

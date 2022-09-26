@@ -8,7 +8,8 @@
     ".NETCoreApp,Version=v3.1": {
       "BLL/1.0.0": {
         "dependencies": {
-          "DAL": "1.0.0"
+          "DAL": "1.0.0",
+          "Entity": "1.0.0"
         },
         "runtime": {
           "BLL.dll": {}

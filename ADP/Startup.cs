@@ -49,6 +49,13 @@ namespace ADP
                 options.Cookie.Name = "Owner.Says";
                 options.LoginPath = "/Auth/Login";
 
+            }).
+            AddCookie("Admin", options =>
+            {
+
+                options.Cookie.Name = "Admin.Says";
+                options.LoginPath = "/Account/Login";
+
             });
 
             services.AddAutoMapper(typeof(Startup));
