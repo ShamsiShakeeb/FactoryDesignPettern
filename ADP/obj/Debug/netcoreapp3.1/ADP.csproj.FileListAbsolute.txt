@@ -398,3 +398,7 @@ C:\Users\MIJU\Desktop\GGtt\FactoryDesignPettern\ADP\obj\Debug\netcoreapp3.1\ADP.
 C:\Users\MIJU\Desktop\GGtt\FactoryDesignPettern\ADP\obj\Debug\netcoreapp3.1\ADP.dll
 C:\Users\MIJU\Desktop\GGtt\FactoryDesignPettern\ADP\obj\Debug\netcoreapp3.1\ADP.pdb
 C:\Users\MIJU\Desktop\GGtt\FactoryDesignPettern\ADP\obj\Debug\netcoreapp3.1\ADP.genruntimeconfig.cache
+C:\Users\MIJU\Desktop\GGtt\FactoryDesignPettern\ADP\obj\Debug\netcoreapp3.1\Razor\Views\Administration\CreateRole.cshtml.g.cs
+C:\Users\MIJU\Desktop\GGtt\FactoryDesignPettern\ADP\obj\Debug\netcoreapp3.1\Razor\Views\Administration\ListRoles.cshtml.g.cs
+C:\Users\MIJU\Desktop\GGtt\FactoryDesignPettern\ADP\obj\Debug\netcoreapp3.1\Razor\Views\Administration\EditRole.cshtml.g.cs
+C:\Users\MIJU\Desktop\GGtt\FactoryDesignPettern\ADP\obj\Debug\netcoreapp3.1\Razor\Views\Administration\EditUsersInRole.cshtml.g.cs

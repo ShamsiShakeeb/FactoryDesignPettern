@@ -24,5 +24,6 @@ namespace Entity
         [Required]
         public decimal Salary { set; get; }
         public List<StudentTeacher> StudentTeachers { set; get; }
+        public List<TeacherCourse> TeacherCourses { set; get; }
     }
 }

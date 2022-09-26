@@ -15,7 +15,10 @@ namespace ADP.Factory
     {
         private readonly IStudentService _studentService;
         private readonly IStudentTeacherService _studentTeacherService;
+        private readonly IStudentCourseService _studentCourseService;
         private readonly ITeacherService _teacherService;
+        private readonly ITeacherCourseService _teacherCourseService;
+
         private readonly IMapper _mapper;
         public StudentFactory(IStudentService studentService,
             IMapper mapper,

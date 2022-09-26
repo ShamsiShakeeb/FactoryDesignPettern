@@ -24,5 +24,6 @@ namespace Entity
         [Required]
         public double Cgpa { set; get; }
         public List<StudentTeacher> StudentTeachers { set; get; }
+        public List<StudentCourse> StudentCourses { set; get; }
     }
 }
