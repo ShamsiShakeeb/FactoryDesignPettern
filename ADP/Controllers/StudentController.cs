@@ -9,7 +9,7 @@ using ViewModel;
 
 namespace ADP.Controllers
 {
-    [Authorize]
+    //[Authorize]
     public class StudentController : Controller
     {
         private readonly IStudentFactory _studentFactory;
@@ -18,25 +18,30 @@ namespace ADP.Controllers
         {
             _studentFactory = studentFactory;
         }
+        [Route("api/student/Index")]
+        [HttpGet]
         public async Task<IActionResult> Index()
         {
             var list = await _studentFactory.Get();
-            return View(list);
+            return Ok(list);
         }
+        [Route("api/student/StudentTeacherReport")]
+        [HttpGet]
         public async Task<IActionResult> StudentTeacherReport()
         {
             var list = await _studentFactory.StudentTeacherRelation();
-            return View(list);
+            return Ok(list);
         }
-        public IActionResult Create()
-        {
-            return View();
-        }
+        //public IActionResult Create()
+        //{
+        //    return View();
+        //}
+        [Route("api/student/Create")]
         [HttpPost]
         public async Task<IActionResult> Create(StudentViewModel model)
         {
             await _studentFactory.Insert(model);
-            return RedirectToAction(actionName: "Index" , controllerName:"Student");
+            return Ok(true);
         }
     }
 }

@@ -407,3 +407,4 @@ C:\Users\BS483\source\repos\ADP\ADP\obj\Debug\netcoreapp3.1\ADP.dll
 C:\Users\BS483\source\repos\ADP\ADP\obj\Debug\netcoreapp3.1\ADP.pdb
 C:\Users\BS483\source\repos\ADP\ADP\obj\Debug\netcoreapp3.1\ADP.genruntimeconfig.cache
 C:\Users\BS483\source\repos\ADP\ADP\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\StudentTeacherRelation\StudentTeacherRelation.cshtml.g.cs
+C:\Users\BS483\source\repos\ADP\ADP\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\Student\StudentViewComponent.cshtml.g.cs

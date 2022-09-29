@@ -18,6 +18,7 @@ namespace ADP.ViewComponents
         public async Task<IViewComponentResult> InvokeAsync(int? studentId)
         {
             var model = new List<StudentTeacherRelationViewModel>();
+
             if (studentId == null)
                 model = await _studentFactory.StudentTeacherRelation();
             else
