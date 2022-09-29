@@ -32,10 +32,10 @@ namespace ADP.Controllers
             var list = await _studentFactory.StudentTeacherRelation();
             return Ok(list);
         }
-        //public IActionResult Create()
-        //{
-        //    return View();
-        //}
+        public IActionResult Create()
+        {
+            return View();
+        }
         [Route("api/student/Create")]
         [HttpPost]
         public async Task<IActionResult> Create(StudentViewModel model)
