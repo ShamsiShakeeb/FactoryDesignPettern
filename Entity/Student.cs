@@ -5,10 +5,8 @@ using System.Text;
 
 namespace Entity
 {
-    public class Student
+    public class Student : BaseEntity
     {
-        [Key]
-        public int Id { set; get; }
         [Required]
         [MaxLength(50)]
         [MinLength(3)]

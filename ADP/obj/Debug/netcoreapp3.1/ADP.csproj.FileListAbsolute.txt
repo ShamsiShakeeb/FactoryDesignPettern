@@ -202,6 +202,13 @@ C:\Users\MIJU\Desktop\GGtt\FactoryDesignPettern\ADP\obj\Debug\netcoreapp3.1\Razo
 C:\Users\MIJU\Desktop\GGtt\FactoryDesignPettern\ADP\obj\Debug\netcoreapp3.1\Razor\Views\Administration\ListRoles.cshtml.g.cs
 C:\Users\MIJU\Desktop\GGtt\FactoryDesignPettern\ADP\obj\Debug\netcoreapp3.1\Razor\Views\Administration\EditRole.cshtml.g.cs
 C:\Users\MIJU\Desktop\GGtt\FactoryDesignPettern\ADP\obj\Debug\netcoreapp3.1\Razor\Views\Administration\EditUsersInRole.cshtml.g.cs
+C:\Users\BS483\source\repos\ADP\ADP\obj\Debug\netcoreapp3.1\ADP.csprojAssemblyReference.cache
+C:\Users\BS483\source\repos\ADP\ADP\obj\Debug\netcoreapp3.1\ADP.AssemblyInfoInputs.cache
+C:\Users\BS483\source\repos\ADP\ADP\obj\Debug\netcoreapp3.1\ADP.AssemblyInfo.cs
+C:\Users\BS483\source\repos\ADP\ADP\obj\Debug\netcoreapp3.1\ADP.csproj.CoreCompileInputs.cache
+C:\Users\BS483\source\repos\ADP\ADP\obj\Debug\netcoreapp3.1\ADP.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\BS483\source\repos\ADP\ADP\obj\Debug\netcoreapp3.1\ADP.RazorAssemblyInfo.cache
+C:\Users\BS483\source\repos\ADP\ADP\obj\Debug\netcoreapp3.1\ADP.RazorAssemblyInfo.cs
 C:\Users\BS483\source\repos\ADP\ADP\bin\Debug\netcoreapp3.1\appsettings.Development.json
 C:\Users\BS483\source\repos\ADP\ADP\bin\Debug\netcoreapp3.1\appsettings.json
 C:\Users\BS483\source\repos\ADP\ADP\bin\Debug\netcoreapp3.1\ADP.exe
@@ -371,13 +378,6 @@ C:\Users\BS483\source\repos\ADP\ADP\bin\Debug\netcoreapp3.1\BLL.pdb
 C:\Users\BS483\source\repos\ADP\ADP\bin\Debug\netcoreapp3.1\DAL.pdb
 C:\Users\BS483\source\repos\ADP\ADP\bin\Debug\netcoreapp3.1\Entity.pdb
 C:\Users\BS483\source\repos\ADP\ADP\bin\Debug\netcoreapp3.1\ViewModel.pdb
-C:\Users\BS483\source\repos\ADP\ADP\obj\Debug\netcoreapp3.1\ADP.csprojAssemblyReference.cache
-C:\Users\BS483\source\repos\ADP\ADP\obj\Debug\netcoreapp3.1\ADP.AssemblyInfoInputs.cache
-C:\Users\BS483\source\repos\ADP\ADP\obj\Debug\netcoreapp3.1\ADP.AssemblyInfo.cs
-C:\Users\BS483\source\repos\ADP\ADP\obj\Debug\netcoreapp3.1\ADP.csproj.CoreCompileInputs.cache
-C:\Users\BS483\source\repos\ADP\ADP\obj\Debug\netcoreapp3.1\ADP.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\BS483\source\repos\ADP\ADP\obj\Debug\netcoreapp3.1\ADP.RazorAssemblyInfo.cache
-C:\Users\BS483\source\repos\ADP\ADP\obj\Debug\netcoreapp3.1\ADP.RazorAssemblyInfo.cs
 C:\Users\BS483\source\repos\ADP\ADP\obj\Debug\netcoreapp3.1\staticwebassets\ADP.StaticWebAssets.Manifest.cache
 C:\Users\BS483\source\repos\ADP\ADP\obj\Debug\netcoreapp3.1\staticwebassets\ADP.StaticWebAssets.xml
 C:\Users\BS483\source\repos\ADP\ADP\obj\Debug\netcoreapp3.1\scopedcss\bundle\ADP.styles.css

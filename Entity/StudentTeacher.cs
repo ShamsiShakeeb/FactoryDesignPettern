@@ -6,10 +6,8 @@ using System.Text;
 
 namespace Entity
 {
-    public class StudentTeacher
+    public class StudentTeacher : BaseEntity
     {
-        [Key]
-        public int Id { set; get; }
         [ForeignKey("Student")]
         public int StudentId { set; get; }
         public Student Student { set; get; }

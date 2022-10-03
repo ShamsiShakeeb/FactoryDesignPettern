@@ -65,16 +65,12 @@ namespace ADP
 
            
             services.AddScoped(typeof(IRepository<>),typeof(Repository<>));
-
+            services.AddScoped(typeof(IGenericService<>),typeof(GenericService<>));
+            services.AddScoped(typeof(IGenericFactory<>),typeof(GenericFactory<>));
             services.AddScoped<IStudentService, StudentService>();
             services.AddScoped<ITeacherService, TeacherService>();
             services.AddScoped<IStudentTeacherService, StudentTeacherService>();
-
-
             services.AddScoped<IStudentFactory, StudentFactory>();
-
-
-
             services.AddControllersWithViews();
         }
 

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace DAL.Repository
 {
-    public class Repository<TEntity> : IRepository<TEntity> where TEntity : class, new()
+    public class Repository<TEntity> : IRepository<TEntity> where TEntity : BaseEntity, new()
     {
         private readonly DatabaseContext _databaseContext;
         public Repository(DatabaseContext databaseContext)
@@ -40,7 +40,7 @@ namespace DAL.Repository
         public virtual async Task<TEntity> GetEntity(Expression<Func<TEntity, bool>> expression)
         {
             var model = await _databaseContext.Set<TEntity>().Where(expression).FirstOrDefaultAsync();
-            return model;
+            return model==null?new TEntity():model;
         }
 
         public virtual async Task<List<TEntity>> GetListAsync(Expression<Func<TEntity, bool>> expression=null)

@@ -22,7 +22,7 @@ namespace ADP.Controllers
         [HttpGet]
         public async Task<IActionResult> Index()
         {
-            var list = await _studentFactory.Get();
+            var list = await _studentFactory.Get<StudentViewModel>();
             return Ok(list);
         }
 

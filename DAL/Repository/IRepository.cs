@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Entity;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DAL.Repository
 {
-    public interface IRepository<TEntity>  where TEntity : class, new()
+    public interface IRepository<TEntity>  where TEntity : BaseEntity, new()
     {
          Task Insert(TEntity model);
          Task Update(TEntity model);
