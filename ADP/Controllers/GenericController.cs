@@ -20,32 +20,32 @@ namespace ADP.Controllers
         public async Task<IActionResult> Insert(TViewModel model) 
         {
             await _genericFactory.Insert(model);
-            return Ok(new { message = "Student Added" });
+            return Ok(new { message = string.Format("{0} added",nameof(TEntity)) });
         }
         [HttpPost]
         public async Task<IActionResult> Update(int id, TViewModel model) 
         {
             await _genericFactory.Update(id, model);
-            return Ok(new { message = "Student Updated" });
+            return Ok(new { message = string.Format("{0} added", nameof(TEntity)) });
         }
         [HttpGet]
         public async Task<IActionResult> Delete(int id)
         {
             await _genericFactory.Delete(id);
-            return Ok(new { message = "Student Deleted Successfully" });
+            return Ok(new { message = string.Format("{0} Deleted Successfully", nameof(TEntity)) });
         }
         [HttpGet]
         public async Task<IActionResult> Details(int id) 
         {
             var data = await _genericFactory.DetailsById<TViewModel>(id);
-            return Ok(new { message = "Student Details Fetch Successfully", result = data });
+            return Ok(new { message = string.Format("{0} Fetch Details Successfully", nameof(TEntity)), result = data });
         }
 
         [HttpGet]
         public async Task<IActionResult> List() 
         {
             var list = await _genericFactory.Get<TViewModel>();
-            return Ok(new { message = "Student List Fetch Successfully", result = list });
+            return Ok(new { message = string.Format("{0} List Fetched Successfully", nameof(TEntity)), result = list });
         }
     }
 }
