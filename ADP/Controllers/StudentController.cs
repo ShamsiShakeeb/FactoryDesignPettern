@@ -33,10 +33,9 @@ namespace ADP.Controllers
             if (!ModelState.IsValid)
              return BadRequest("Invalid data.");
 
-
           await _studentFactory.Insert(student);
 
-            return Ok();
+          return Ok();
         }
         [Route("api/student/{id}")]
         [HttpDelete]
@@ -44,9 +43,7 @@ namespace ADP.Controllers
         {
             if (id <= 0)
                 return BadRequest("Not a valid student id");
-
             await _studentFactory.Delete(id);
-
             return Ok();
         }
 
@@ -56,10 +53,7 @@ namespace ADP.Controllers
         {
             if (!ModelState.IsValid)
                 return BadRequest("Invalid data.");
-
-
             await _studentFactory.Update(id, student);
-
             return Ok();
         }
 
