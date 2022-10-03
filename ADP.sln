@@ -3,15 +3,24 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30717.126
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ADP", "ADP\ADP.csproj", "{15956AB6-0E4F-4C61-AB4C-99FFA0C13FBC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ADP", "ADP\ADP.csproj", "{15956AB6-0E4F-4C61-AB4C-99FFA0C13FBC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{71F3B0BD-C7C9-48DD-A39E-17F8F4EB7EA0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DAL", "DAL\DAL.csproj", "{71F3B0BD-C7C9-48DD-A39E-17F8F4EB7EA0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BLL", "BLL\BLL.csproj", "{69CFBA04-E22E-40B4-89B2-B1CBF938E676}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BLL", "BLL\BLL.csproj", "{69CFBA04-E22E-40B4-89B2-B1CBF938E676}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entity", "Entity\Entity.csproj", "{F9A6B300-60C8-4C6F-A464-B45D2C44C1FA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Entity", "Entity\Entity.csproj", "{F9A6B300-60C8-4C6F-A464-B45D2C44C1FA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ViewModel", "ViewModel\ViewModel.csproj", "{0C5ECD05-E19A-4D46-AA04-853EE1DF9E09}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ViewModel", "ViewModel\ViewModel.csproj", "{0C5ECD05-E19A-4D46-AA04-853EE1DF9E09}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ClientApp", "ClientApp", "{4A7AC0F0-9DA9-42F5-9061-1F031958D644}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\Desktop\Student CRUD\RestService.script = ..\..\..\Desktop\Student CRUD\RestService.script
+		..\..\..\Desktop\Student CRUD\StudentDetails.html = ..\..\..\Desktop\Student CRUD\StudentDetails.html
+		..\..\..\Desktop\Student CRUD\StudentInsert.html = ..\..\..\Desktop\Student CRUD\StudentInsert.html
+		..\..\..\Desktop\Student CRUD\StudentList.html = ..\..\..\Desktop\Student CRUD\StudentList.html
+		..\..\..\Desktop\Student CRUD\StudentUpdate.html = ..\..\..\Desktop\Student CRUD\StudentUpdate.html
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
