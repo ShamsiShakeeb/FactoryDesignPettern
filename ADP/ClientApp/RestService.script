@@ -1,0 +1,7 @@
+function ApiCall(url,type,model){
+
+}
+
+function ApiCall(url,type){
+
+}

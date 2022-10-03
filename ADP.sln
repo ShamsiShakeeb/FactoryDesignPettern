@@ -13,15 +13,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Entity", "Entity\Entity.csp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ViewModel", "ViewModel\ViewModel.csproj", "{0C5ECD05-E19A-4D46-AA04-853EE1DF9E09}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ClientApp", "ClientApp", "{4A7AC0F0-9DA9-42F5-9061-1F031958D644}"
-	ProjectSection(SolutionItems) = preProject
-		..\..\..\Desktop\Student CRUD\RestService.script = ..\..\..\Desktop\Student CRUD\RestService.script
-		..\..\..\Desktop\Student CRUD\StudentDetails.html = ..\..\..\Desktop\Student CRUD\StudentDetails.html
-		..\..\..\Desktop\Student CRUD\StudentInsert.html = ..\..\..\Desktop\Student CRUD\StudentInsert.html
-		..\..\..\Desktop\Student CRUD\StudentList.html = ..\..\..\Desktop\Student CRUD\StudentList.html
-		..\..\..\Desktop\Student CRUD\StudentUpdate.html = ..\..\..\Desktop\Student CRUD\StudentUpdate.html
-	EndProjectSection
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
