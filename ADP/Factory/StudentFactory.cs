@@ -30,6 +30,8 @@ namespace ADP.Factory
             _teacherService = teacherService;
             _mapper = mapper;
         }
+
+        #region Common
         public async Task Insert(StudentViewModel studentViewModel)
         {
              var student = _mapper.Map<Student>(studentViewModel);
@@ -39,12 +41,7 @@ namespace ADP.Factory
         {
             var model = await _studentService.GetEntity(x=> x.Id==id);
             var student = _mapper.Map<Student>(studentViewModel);
-
-            model.Name = student.Name;
-            model.Email = student.Email;
-            model.Address = student.Address;
-            model.Cgpa = student.Cgpa;
-
+            model = student;
             await _studentService.Update(model);
         }
         public async Task Delete(int id)
@@ -58,13 +55,14 @@ namespace ADP.Factory
             var list = _mapper.Map<List<Student>, List<StudentViewModel>>(data);
             return list;
         }
-
         public async Task<StudentViewModel> DetailsById(int id)
         {
              var data = await _studentService.GetEntity(x=> x.Id == id);
              var model = _mapper.Map<StudentViewModel>(data);
              return model;
         }
+        #endregion
+        #region Uncommon
         public async Task DeleteByEmail(string email)
         {
             var data = await _studentService.GetEntity(x => x.Email == email);
@@ -112,12 +110,12 @@ namespace ADP.Factory
 
             return data;
         }
-
         public async Task<List<StudentViewModel>> Get(string address)
         {
             var data = await _studentService.GetListAsync(x => x.Address==address);
             var list = _mapper.Map<List<Student>, List<StudentViewModel>>(data);
             return list;
         }
+        #endregion
     }
 }

@@ -22,7 +22,6 @@ namespace ADP.Controllers
             await _studentFactory.Insert(model);
             return Ok(new { message = "Student Added" });
         }
-
         [Route("api/StudentApi/Update/{id}")]
         [HttpPost]
         public async Task<IActionResult> Update(int id, StudentViewModel model)
