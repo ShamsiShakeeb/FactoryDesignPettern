@@ -27,8 +27,6 @@ namespace ADP.Factory
         {
             var g = await _genericService.GetEntity(x => x.Id == id);
             var m = _mapper.Map<TEntity>(model);
-            m.Id = g.Id;
-            g = m;
             await _genericService.Update(m);
         }
         public virtual async Task Delete(int id)

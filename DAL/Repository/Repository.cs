@@ -24,8 +24,15 @@ namespace DAL.Repository
         }
         public virtual async Task Update(TEntity model)
         {
-            _databaseContext.Set<TEntity>().Update(model);
-            await _databaseContext.SaveChangesAsync();
+            try
+            {
+                _databaseContext.Set<TEntity>().Update(model);
+                await _databaseContext.SaveChangesAsync();
+            }
+            catch(Exception ex)
+            {
+
+            }
         }
         public virtual async Task Delete(TEntity model)
         {
@@ -34,12 +41,12 @@ namespace DAL.Repository
         }
         public virtual IQueryable<TEntity> Get(Expression<Func<TEntity,bool>> expression)
         {
-            var list = _databaseContext.Set<TEntity>().Where(expression);
+            var list = _databaseContext.Set<TEntity>().Where(expression).AsNoTracking();
             return list;
         }
         public virtual async Task<TEntity> GetEntity(Expression<Func<TEntity, bool>> expression)
         {
-            var model = await _databaseContext.Set<TEntity>().Where(expression).FirstOrDefaultAsync();
+            var model = await _databaseContext.Set<TEntity>().Where(expression).AsNoTracking().FirstOrDefaultAsync();
             return model==null?new TEntity():model;
         }
 
@@ -47,15 +54,15 @@ namespace DAL.Repository
         {
             var list = new List<TEntity>();
             if(expression!=null)
-                 list = await _databaseContext.Set<TEntity>().Where(expression).ToListAsync();
+                 list = await _databaseContext.Set<TEntity>().Where(expression).AsNoTracking().ToListAsync();
             else
-                list = await _databaseContext.Set<TEntity>().ToListAsync();
+                list = await _databaseContext.Set<TEntity>().AsNoTracking().ToListAsync();
             return list;
         }
 
         public IQueryable<TEntity> Get()
         {
-            var model = _databaseContext.Set<TEntity>();
+            var model = _databaseContext.Set<TEntity>().AsNoTracking();
             return model;
         }
     }
