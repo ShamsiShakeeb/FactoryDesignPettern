@@ -18,6 +18,7 @@ namespace ADP.Controllers
         {
             _studentFactory = studentFactory;
         }
+
         [Route("api/student/Index")]
         [HttpGet]
         public async Task<IActionResult> Index()
@@ -61,7 +62,7 @@ namespace ADP.Controllers
         [HttpGet]
         public async Task<IActionResult> Search(string address)
         {
-            var list = await _studentFactory.Get(address);
+            var list = await _studentFactory.GetStudentByAddress(address);
             return Ok(list);
         }
         [Route("api/student/StudentTeacherReport")]

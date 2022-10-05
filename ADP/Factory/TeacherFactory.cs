@@ -11,56 +11,26 @@ using ViewModel;
 
 namespace ADP.Factory
 {
-    public class TeacherFactory:ITeacherFactory
+    public class TeacherFactory: GenericFactory<Teacher> , ITeacherFactory
     {
-        
-        private readonly IStudentService _studentService;
-        private readonly IStudentTeacherService _studentTeacherService;
-        private readonly IStudentCourseService _studentCourseService;
-        private readonly ITeacherService _teacherService;
-        private readonly ITeacherCourseService _teacherCourseService;
+        private readonly IGenericService<Student> _studentService;
+        private readonly IGenericService<StudentTeacher> _studentTeacherService;
+        private readonly IGenericService<Teacher> _teacherService;
 
         private readonly IMapper _mapper;
-        public TeacherFactory(IStudentService studentService,
+        public TeacherFactory(
             IMapper mapper,
-            IStudentTeacherService studentTeacherService,
-            IStudentCourseService studentCourseService,
-            ITeacherService teacherService,
-            ITeacherCourseService teacherCourseService)
+            IGenericService<Student> studentService,
+            IGenericService<StudentTeacher> studentTeacherService,
+            IGenericService<Teacher> teacherService)
+
+            : base(teacherService, mapper)
         {
+            _mapper = mapper;
             _studentService = studentService;
             _studentTeacherService = studentTeacherService;
-            _studentCourseService = studentCourseService;
             _teacherService = teacherService;
-            _teacherCourseService = teacherCourseService;
-            _mapper = mapper;
-        }
-        public async Task Insert(TeacherViewModel teacherViewModel)
-        {
-            var teacher = _mapper.Map<Teacher>(teacherViewModel);
-            await _teacherService.Insert(teacher);
-        }
-        public async Task Update(TeacherViewModel teacherViewModel)
-        {
-            var teacher = _mapper.Map<Teacher>(teacherViewModel);
-            await _teacherService.Update(teacher);
-        }
-        public async Task Delete(int id)
-        {
-            var data = await _teacherService.GetEntity(x => x.Id == id);
-            await _teacherService.Delete(data);
-        }
-        public async Task<List<TeacherViewModel>> Get()
-        {
-            var data = await _teacherService.GetListAsync(x => true);
-            var list = _mapper.Map<List<Teacher>, List<TeacherViewModel>>(data);
-            return list;
-        }
-        public async Task<TeacherViewModel> DetailsById(int id)
-        {
-            var data = await _teacherService.GetEntity(x => x.Id == id);
-            var model = _mapper.Map<TeacherViewModel>(data);
-            return model;
+
         }
         public async Task DeleteByEmail(string email)
         {

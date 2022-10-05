@@ -19,33 +19,35 @@ namespace ADP.Controllers
         [HttpPost]
         public async Task<IActionResult> Insert(TViewModel model) 
         {
-            await _genericFactory.Insert(model);
-            return Ok(new { message = string.Format("{0} added",nameof(TEntity)) });
+            var result = await _genericFactory.Insert(model);
+            return Ok(result);
         }
         [HttpPost]
         public async Task<IActionResult> Update(int id, TViewModel model) 
         {
-            await _genericFactory.Update(id, model);
-            return Ok(new { message = string.Format("{0} added", nameof(TEntity)) });
+            var result = await _genericFactory.Update(id, model);
+            return Ok(result);
         }
         [HttpGet]
         public async Task<IActionResult> Delete(int id)
         {
-            await _genericFactory.Delete(id);
-            return Ok(new { message = string.Format("{0} Deleted Successfully", nameof(TEntity)) });
+            var result = await _genericFactory.Delete(id);
+            return Ok(result);
         }
         [HttpGet]
         public async Task<IActionResult> Details(int id) 
         {
             var data = await _genericFactory.DetailsById<TViewModel>(id);
-            return Ok(new { message = string.Format("{0} Fetch Details Successfully", nameof(TEntity)), result = data });
+            return Ok(new { message = data == null? "No Data Found":
+                string.Format("{0} Fetch Details Successfully", 
+                typeof(TEntity)), result = data });
         }
 
         [HttpGet]
         public async Task<IActionResult> List() 
         {
             var list = await _genericFactory.Get<TViewModel>();
-            return Ok(new { message = string.Format("{0} List Fetched Successfully", nameof(TEntity)), result = list });
+            return Ok(new { message = string.Format("{0} List Fetched Successfully", typeof(TEntity)), result = list });
         }
     }
 }

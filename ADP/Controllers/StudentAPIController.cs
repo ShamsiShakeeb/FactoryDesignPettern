@@ -24,7 +24,6 @@ namespace ADP.Controllers
             var list = await _studentFactory.StudentTeacherRelation();
             return Ok(list);
         }
-        // [Route("api/StudentApi/{email}")]
         [HttpGet]
         public async Task<ActionResult> DeleteByEmail(string email)
         {

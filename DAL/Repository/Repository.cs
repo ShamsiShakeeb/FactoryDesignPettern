@@ -17,32 +17,53 @@ namespace DAL.Repository
             _databaseContext = databaseContext;
         }
 
-        public virtual async Task Insert(TEntity model) 
+        public virtual async Task<(bool result, string message, string error)> Insert(TEntity model)
         {
-            _databaseContext.Set<TEntity>().Add(model);
-            await _databaseContext.SaveChangesAsync();
+            try
+            {
+                _databaseContext.Set<TEntity>().Add(model);
+                await _databaseContext.SaveChangesAsync();
+                return (true, "Data Insersted Successfully", null);
+            }
+            catch (Exception ex)
+            {
+                return (false, "Something Went Worng", ex.Message.ToString());
+            }
         }
-        public virtual async Task Update(TEntity model)
+        public virtual async Task<(bool result, string message, string error)> Update(TEntity model)
         {
             try
             {
                 _databaseContext.Set<TEntity>().Update(model);
                 await _databaseContext.SaveChangesAsync();
+                return (true, "Data Updated Successfully", null);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-
+                return (false, "Something Went Worng", ex.Message.ToString());
             }
         }
-        public virtual async Task Delete(TEntity model)
+        public virtual async Task<(bool result, string message, string error)> Delete(TEntity model)
         {
-            _databaseContext.Set<TEntity>().Remove(model);
-            await _databaseContext.SaveChangesAsync();
+            try
+            {
+                _databaseContext.Set<TEntity>().Remove(model);
+                await _databaseContext.SaveChangesAsync();
+                return (true, "Data Deleted Successfully", null);
+            }
+            catch (Exception ex)
+            {
+                return (false, "Something Went Worng", ex.Message.ToString());
+            }
         }
-        public virtual IQueryable<TEntity> Get(Expression<Func<TEntity,bool>> expression)
+
+        public virtual IQueryable<TEntity> Get(
+            Expression<Func<TEntity, bool>> expression)
         {
+
             var list = _databaseContext.Set<TEntity>().Where(expression).AsNoTracking();
             return list;
+
         }
         public virtual async Task<TEntity> GetEntity(Expression<Func<TEntity, bool>> expression)
         {
@@ -50,20 +71,21 @@ namespace DAL.Repository
             return model==null?new TEntity():model;
         }
 
-        public virtual async Task<List<TEntity>> GetListAsync(Expression<Func<TEntity, bool>> expression=null)
+        public virtual async Task<List<TEntity>> GetListAsync(Expression<Func<TEntity, bool>> expression = null)
         {
             var list = new List<TEntity>();
-            if(expression!=null)
-                 list = await _databaseContext.Set<TEntity>().Where(expression).AsNoTracking().ToListAsync();
+            if (expression != null)
+                list = await _databaseContext.Set<TEntity>().Where(expression).AsNoTracking().ToListAsync();
             else
                 list = await _databaseContext.Set<TEntity>().AsNoTracking().ToListAsync();
             return list;
         }
-
         public IQueryable<TEntity> Get()
         {
             var model = _databaseContext.Set<TEntity>().AsNoTracking();
             return model;
         }
+
+       
     }
 }

@@ -18,21 +18,21 @@ namespace ADP.Factory
             _genericService = genericService;
             _mapper = mapper;
         }
-        public virtual async Task Insert<TViewModel>(TViewModel model) where TViewModel : class
+        public virtual async Task<(bool result , string mesage , string error)> Insert<TViewModel>(TViewModel model) where TViewModel : class
         {
             var m = _mapper.Map<TEntity>(model);
-            await _genericService.Insert(m);
+            return await _genericService.Insert(m);
         }
-        public virtual async Task Update<TViewModel>(int id, TViewModel model) where TViewModel : class
+        public virtual async Task<(bool result, string mesage, string error)> Update<TViewModel>(int id, TViewModel model) where TViewModel : class
         {
             var g = await _genericService.GetEntity(x => x.Id == id);
             var m = _mapper.Map<TEntity>(model);
-            await _genericService.Update(m);
+            return await _genericService.Update(m);
         }
-        public virtual async Task Delete(int id)
+        public virtual async Task<(bool result, string mesage, string error)> Delete(int id)
         {
             var data = await _genericService.GetEntity(x => x.Id == id);
-            await _genericService.Delete(data);
+            return await _genericService.Delete(data);
         }
         public virtual async Task<List<TViewModel>> Get<TViewModel>() where TViewModel : class
         {
