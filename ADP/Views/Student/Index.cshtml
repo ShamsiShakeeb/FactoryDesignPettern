@@ -9,6 +9,8 @@
 <p>
     <a asp-action="Create">Create New</a>
 </p>
+<div class="card">
+<div class="card-body">
 <table class="table">
     <thead>
         <tr>
@@ -51,3 +53,9 @@
 }
     </tbody>
 </table>
+</div>
+
+<div class="card-body">
+    @(await Component.InvokeAsync("StudentTeacherRelation"))
+</div>
+ </div>

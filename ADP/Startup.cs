@@ -13,9 +13,6 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace ADP
 {
@@ -31,6 +28,8 @@ namespace ADP
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+
+           
 
             services.AddDbContext<DatabaseContext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("DevConnection")));
@@ -49,6 +48,13 @@ namespace ADP
                 options.Cookie.Name = "Owner.Says";
                 options.LoginPath = "/Auth/Login";
 
+            }).
+            AddCookie("Admin", options =>
+            {
+
+                options.Cookie.Name = "Admin.Says";
+                options.LoginPath = "/Account/Login";
+
             });
 
             services.AddAutoMapper(typeof(Startup));
@@ -56,16 +62,9 @@ namespace ADP
 
            
             services.AddScoped(typeof(IRepository<>),typeof(Repository<>));
-
-            services.AddScoped<IStudentService, StudentService>();
-            services.AddScoped<ITeacherService, TeacherService>();
-            services.AddScoped<IStudentTeacherService, StudentTeacherService>();
-
-
+            services.AddScoped(typeof(IGenericService<>),typeof(GenericService<>));
+            services.AddScoped(typeof(IGenericFactory<>),typeof(GenericFactory<>));
             services.AddScoped<IStudentFactory, StudentFactory>();
-
-
-
             services.AddControllersWithViews();
         }
 
@@ -82,6 +81,15 @@ namespace ADP
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
+
+            app.UseCors(builder =>
+            {
+                builder
+                .AllowAnyOrigin()
+                .AllowAnyMethod()
+                .AllowAnyHeader();
+            });
+
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 

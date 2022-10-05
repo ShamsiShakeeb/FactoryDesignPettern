@@ -84,7 +84,7 @@ namespace ADP.Controllers
                 ModelState.AddModelError(string.Empty, "Login Failed");
                 return View();
             }
-            var login = await _signManager.PasswordSignInAsync(model.UserName, model.Password, true, false);
+            var login = await _signManager.PasswordSignInAsync(model.UserName, model.Password, false, false);
 
             if (login.Succeeded)
             {

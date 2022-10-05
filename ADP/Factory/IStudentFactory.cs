@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Entity;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -6,15 +7,11 @@ using ViewModel;
 
 namespace ADP.Factory
 {
-    public interface IStudentFactory
+    public interface IStudentFactory : IGenericFactory<Student>
     {
-        Task Insert(StudentViewModel studentViewModel);
-        Task Update(StudentViewModel studentViewModel);
-        Task Delete(int id);
-        Task<StudentViewModel> DetailsById(int id);
         Task DeleteByEmail(string email);
         Task<List<StudentTeacherRelationViewModel>> StudentTeacherRelationByStudentId(int id);
         Task<List<StudentTeacherRelationViewModel>> StudentTeacherRelation();
-        Task<List<StudentViewModel>> Get();
+        Task<List<StudentViewModel>> GetStudentByAddress(string address);
     }
 }

@@ -13,6 +13,8 @@ namespace ADP.Models
         public AutoMapperProfile()
         {
             CreateMap<Student, StudentViewModel>().ReverseMap();
+            CreateMap<Teacher, TeacherViewModel>().ReverseMap();
+            CreateMap<Course, CourseViewModel>().ReverseMap();
         }
     }
 }

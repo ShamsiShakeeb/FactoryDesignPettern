@@ -1,6 +1,8 @@
-﻿namespace ADP.Factory
+﻿using Entity;
+
+namespace ADP.Factory
 {
-    public interface ITeacherFactory
+    public interface ITeacherFactory : IGenericFactory<Teacher>
     {
     }
 }

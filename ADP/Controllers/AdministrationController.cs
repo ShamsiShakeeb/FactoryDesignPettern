@@ -4,9 +4,11 @@ using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using ViewModel;
+using Microsoft.AspNetCore.Authorization;
 
 namespace ADP.Controllers
 {
+    [Authorize]
     public class AdministrationController : Controller
     {
         private readonly RoleManager<IdentityRole> roleManager;

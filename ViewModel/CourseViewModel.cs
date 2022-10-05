@@ -1,12 +1,15 @@
-﻿using System;
+﻿using Entity;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Text;
 
-namespace Entity
+namespace ViewModel
 {
-    public class Course : BaseEntity
+    public class CourseViewModel 
     {
+        public int Id { set; get; }
+
         [Required]
         [MaxLength(50)]
         [MinLength(3)]
@@ -19,9 +22,5 @@ namespace Entity
         [MaxLength(100)]
         [MinLength(3)]
         public string CourseDetails { set; get; }
-        public List<StudentCourse> StudentCourses { set; get; }
-        public List<TeacherCourse> TeacherCourses { set; get; }
-
-
     }
 }

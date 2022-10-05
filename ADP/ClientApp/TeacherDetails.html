@@ -1,0 +1,43 @@
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+
+<body>
+
+
+    <b> Name: </b> <input type="text" readonly id="name"> <br />
+    <b> Email: </b> <input type="email" readonly id="email"> <br />
+    <b> Address: </b> <input type="textarea" readonly id="address"> <br />
+    <b> Salary: </b> <input type="text" readonly id="salary"> <br />
+
+    <a href="file:///C:/Users/BS483/Desktop/Student%20CRUD/TeacherList.html"> Back to List </a>
+
+    <script>
+
+        const params = new URLSearchParams(window.location.search)
+        var id = params.get('id');
+
+        $.ajax({
+            url: 'https://localhost:44375/api/TeacherApi/Details?id='+ id,
+            type: 'GET',
+            dataType: 'json',
+            success: function (data, textStatus, xhr) {
+                var model = data.result;
+                document.getElementById("name").value = model.name;
+                document.getElementById("email").value = model.email;
+                document.getElementById("address").value = model.address;
+                document.getElementById("salary").value = model.salary;
+            },
+            error: function (data, textStatus, xhr) {
+                alert("Something Went Wrong");
+            }
+        });
+
+    </script>
+
+
+</body>
+
+</html>

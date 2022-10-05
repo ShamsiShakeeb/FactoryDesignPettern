@@ -6,8 +6,8 @@ using System.Text;
 
 namespace BLL
 {
-    internal interface ICourseService : IRepository<Course>
+    public interface IGenericService<TEntity> : IRepository<TEntity> 
+        where TEntity : BaseEntity , new()
     {
-
     }
 }
