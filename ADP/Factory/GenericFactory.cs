@@ -4,6 +4,7 @@ using Entity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Threading.Tasks;
 
 namespace ADP.Factory
@@ -34,9 +35,9 @@ namespace ADP.Factory
             var data = await _genericService.GetEntity(x => x.Id == id);
             return await _genericService.Delete(data);
         }
-        public virtual async Task<List<TViewModel>> Get<TViewModel>() where TViewModel : class
+        public virtual async Task<List<TViewModel>> Get<TViewModel>(Expression<Func<TEntity, bool>> expression = null) where TViewModel : class
         {
-            var data = await _genericService.GetListAsync(x => true);
+            var data = await _genericService.GetListAsync(expression);
             var list = _mapper.Map<List<TEntity>, List<TViewModel>>(data);
             return list;
         }
@@ -46,5 +47,7 @@ namespace ADP.Factory
             var model = _mapper.Map<TViewModel>(data);
             return model;
         }
+
+       
     }
 }

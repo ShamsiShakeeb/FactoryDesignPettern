@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Threading.Tasks;
 
 namespace ADP.Factory
@@ -11,7 +12,7 @@ namespace ADP.Factory
         Task<(bool result, string mesage, string error)> Insert<TViewModel>(TViewModel model) where TViewModel : class;
         Task<(bool result, string mesage, string error)> Update<TViewModel>(int id, TViewModel model) where TViewModel : class;
         Task<(bool result, string mesage, string error)> Delete(int id);
-        Task<List<TViewModel>> Get<TViewModel>() where TViewModel : class;
+        Task<List<TViewModel>> Get<TViewModel>(Expression<Func<TEntity, bool>> expression = null) where TViewModel : class;
         Task<TViewModel> DetailsById<TViewModel>(int id) where TViewModel : class;
     }
 }
