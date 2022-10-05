@@ -11,7 +11,6 @@ C:\Users\MIJU\Desktop\GGtt\FactoryDesignPettern\Entity\obj\Debug\netcoreapp3.1\E
 C:\Users\BS483\source\repos\ADP\Entity\bin\Debug\netcoreapp3.1\Entity.deps.json
 C:\Users\BS483\source\repos\ADP\Entity\bin\Debug\netcoreapp3.1\Entity.dll
 C:\Users\BS483\source\repos\ADP\Entity\bin\Debug\netcoreapp3.1\Entity.pdb
-C:\Users\BS483\source\repos\ADP\Entity\obj\Debug\netcoreapp3.1\Entity.csprojAssemblyReference.cache
 C:\Users\BS483\source\repos\ADP\Entity\obj\Debug\netcoreapp3.1\Entity.AssemblyInfoInputs.cache
 C:\Users\BS483\source\repos\ADP\Entity\obj\Debug\netcoreapp3.1\Entity.AssemblyInfo.cs
 C:\Users\BS483\source\repos\ADP\Entity\obj\Debug\netcoreapp3.1\Entity.csproj.CoreCompileInputs.cache
