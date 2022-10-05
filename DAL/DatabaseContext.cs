@@ -18,5 +18,6 @@ namespace DAL
         public DbSet<StudentTeacher> Student_Teacher { set; get; }
         public DbSet<StudentCourse> Student_Course { set; get; }
         public DbSet<TeacherCourse> Teacher_Course { set; get; }
+        public DbSet<Report> Report { set; get; }
     }
 }

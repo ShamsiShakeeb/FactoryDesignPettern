@@ -6,6 +6,7 @@ using DAL.Repository;
 using Entity;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -65,6 +66,7 @@ namespace ADP
             services.AddScoped(typeof(IGenericService<>),typeof(GenericService<>));
             services.AddScoped(typeof(IGenericFactory<>),typeof(GenericFactory<>));
             services.AddScoped<IStudentFactory, StudentFactory>();
+            services.AddScoped<IReportFactory, ReportFactory>();
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddControllersWithViews();
         }

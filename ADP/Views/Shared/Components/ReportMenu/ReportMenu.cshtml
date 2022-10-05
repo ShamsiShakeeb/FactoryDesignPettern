@@ -1,0 +1,7 @@
+﻿@model List<ReportViewModel>
+
+@foreach(var m in Model)
+{
+    <button onclick="changeReport('@Html.Raw(m.ApiUrl)')"> @m.ReportName </button>
+}
+<br/>

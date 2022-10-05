@@ -15,6 +15,7 @@ namespace ADP.Models
             CreateMap<Student, StudentViewModel>().ReverseMap();
             CreateMap<Teacher, TeacherViewModel>().ReverseMap();
             CreateMap<Course, CourseViewModel>().ReverseMap();
+            CreateMap<Report, ReportViewModel>().ReverseMap();
         }
     }
 }
