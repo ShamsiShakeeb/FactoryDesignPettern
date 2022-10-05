@@ -65,6 +65,7 @@ namespace ADP
             services.AddScoped(typeof(IGenericService<>),typeof(GenericService<>));
             services.AddScoped(typeof(IGenericFactory<>),typeof(GenericFactory<>));
             services.AddScoped<IStudentFactory, StudentFactory>();
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddControllersWithViews();
         }
 

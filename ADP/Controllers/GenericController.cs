@@ -15,39 +15,42 @@ namespace ADP.Controllers
         {
             _genericFactory = genericFactory;
         }
-
         [HttpPost]
         public async Task<IActionResult> Insert(TViewModel model) 
         {
-            var result = await _genericFactory.Insert(model);
-            return Ok(result);
+            var value = await _genericFactory.Insert(model);
+            return Ok(new { success = value.result ,  message = value.mesage , error = value.error });
         }
         [HttpPost]
         public async Task<IActionResult> Update(int id, TViewModel model) 
         {
-            var result = await _genericFactory.Update(id, model);
-            return Ok(result);
+            var value = await _genericFactory.Update(id, model);
+            return Ok(new { success = value.result, message = value.mesage, error = value.error });
         }
         [HttpGet]
         public async Task<IActionResult> Delete(int id)
         {
-            var result = await _genericFactory.Delete(id);
-            return Ok(result);
+            var value = await _genericFactory.Delete(id);
+            return Ok(new { success = value.result, message = value.mesage, error = value.error });
         }
         [HttpGet]
         public async Task<IActionResult> Details(int id) 
         {
             var data = await _genericFactory.DetailsById<TViewModel>(id);
-            return Ok(new { message = data == null? "No Data Found":
+            return Ok(new { 
+                success = data!=null , 
+                message = data == null? "No Data Found":
                 string.Format("{0} Fetch Details Successfully", 
                 typeof(TEntity)), result = data });
         }
-
         [HttpGet]
         public async Task<IActionResult> List() 
         {
             var list = await _genericFactory.Get<TViewModel>();
-            return Ok(new { message = string.Format("{0} List Fetched Successfully", typeof(TEntity)), result = list });
+            return Ok(new { 
+                success = list.Any(),
+                message = string.Format("{0} List Fetched Successfully", typeof(TEntity)), 
+                result = list });
         }
     }
 }
