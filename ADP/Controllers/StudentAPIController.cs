@@ -22,7 +22,12 @@ namespace ADP.Controllers
         public async Task<IActionResult> StudentTeacherReport()
         {
             var list = await _studentFactory.StudentTeacherRelation();
-            return Ok(list);
+            return Ok(new
+            {
+                success = list.Any(),
+                message = string.Format("{0} List Fetched Successfully", "Student Teacher Relation"),
+                result = list
+            });
         }
         [HttpGet]
         public async Task<ActionResult> DeleteByEmail(string email)

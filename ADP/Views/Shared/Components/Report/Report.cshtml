@@ -1,6 +1,6 @@
 ﻿@model ReportViewModel
 @{ 
-    var apiUrl = Model.ApiUrl;
+
 }
 
 <h1> My Report </h1>
@@ -18,18 +18,28 @@
     }
 </style>
 
-@await Component.InvokeAsync("ReportMenu") 
+
 
 <p id="showData"></p>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script>
 
+    Table('@Html.Raw(Model.ApiUrl)');
+    
     function changeReport(path) {
-         var settings = {
-        "url": "https://localhost:44375/" +path,
-        "method": "GET",
-        "timeout": 0,
-      };
+        Table(path);
+    }
+
+    function Table(path) {
+
+        if (path == '' || !path)
+            return;
+
+        var settings = {
+            "url": "https://localhost:44375/" + path,
+            "method": "GET",
+            "timeout": 0,
+        };
         $.ajax(settings).done(function (response) {
 
             // the json data.
