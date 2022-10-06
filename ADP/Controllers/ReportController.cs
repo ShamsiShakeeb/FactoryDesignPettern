@@ -9,6 +9,7 @@ using ViewModel;
 
 namespace ADP.Controllers
 {
+    [Route("api/Report/[action]")]
     public class ReportController : GenericController<Report, ReportViewModel>
     {
         public ReportController(IGenericFactory<Report> genericFactory) : base(genericFactory)
@@ -16,6 +17,16 @@ namespace ADP.Controllers
         }
         public IActionResult ReportList()
         {
+            return View();
+        }
+        public IActionResult DetailsView(int id)
+        {
+            ViewBag.Id = id;
+            return View();
+        }
+        public IActionResult Update(int id)
+        {
+            ViewBag.Id = id;
             return View();
         }
     }

@@ -1,0 +1,31 @@
+﻿@model ReportViewModel
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <b> Path: </b> <input type="text" readonly id="path"> <br />
+    <b> Api Url: </b> <input type="text" readonly id="apiurl"> <br />
+    <b> Report Name: </b> <input type="text" readonly id="reportname"> <br />
+
+    <a href="https://localhost:44375/api/Report/ReportList"> Back to List </a>
+
+    <script>
+
+        const params = new URLSearchParams(window.location.search)
+        var id = @Html.Raw(Model.Id);
+
+        $.ajax({
+            url: 'https://localhost:44375/api/Report/Details?id=' + id,
+            type: 'GET',
+            dataType: 'json',
+            success: function (data, textStatus, xhr) {
+                var model = data.result;
+                document.getElementById("path").value = model.path;
+                document.getElementById("apiurl").value = model.apiUrl;
+                document.getElementById("reportname").value = model.reportName;
+            },
+            error: function (data, textStatus, xhr) {
+                alert("Something Went Wrong");
+            }
+        });
+
+    </script>

@@ -1,0 +1,43 @@
+﻿<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<b> Path: </b>
+<input type="text" id="path">
+<br />
+<b> Api Url: </b>
+<input type="text" id="apiurl">
+<br />
+<b> Report Name: </b>
+<input type="text" id="reportname">
+<br />
+<input type="button" value="save" onclick="Insert()">
+<br />
+
+<a href="https://localhost:44375/api/Report/ReportList"> Back to List</a>
+<script>
+
+    function Insert() {
+
+        var model = {
+
+            path: document.getElementById("path").value,
+            apiUrl: document.getElementById("apiurl").value,
+            reportName: document.getElementById("reportname").value,
+        };
+
+        $.ajax({
+            url: 'https://localhost:44375/api/Report/Insert',
+            type: 'POST',
+            dataType: 'json',
+            data: model,
+            success: function (data, textStatus, xhr) {
+                alert(data.message);
+                location.replace("https://localhost:44375/api/Report/ReportList");
+            },
+            error: function (data, textStatus, xhr) {
+                alert("Something Went Wrong");
+            }
+        });
+
+    }
+
+</script>

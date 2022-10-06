@@ -24,7 +24,7 @@ namespace ADP.ViewComponents
         {
             var actionPath = _httpContextAccessor.HttpContext.Request.Path.Value;
             var list = new List<ReportViewModel>();
-            if(actionPath.Equals("/Report/ReportList"))
+            if(actionPath.Equals("/api/Report/ReportList"))
                 list = await _reportFactory.Get<ReportViewModel>();
             else
                 list = await _reportFactory.Get<ReportViewModel>(x=> x.Path==actionPath);
