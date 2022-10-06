@@ -16,25 +16,25 @@ namespace ADP.Controllers
             _genericFactory = genericFactory;
         }
         [HttpPost]
-        public virtual async Task<IActionResult> Insert(TViewModel model) 
+        public async Task<IActionResult> Insert(TViewModel model) 
         {
             var value = await _genericFactory.Insert(model);
             return Ok(new { success = value.result ,  message = value.mesage , error = value.error });
         }
         [HttpPost]
-        public virtual async Task<IActionResult> Update(int id, TViewModel model) 
+        public async Task<IActionResult> Update(int id, TViewModel model) 
         {
             var value = await _genericFactory.Update(id, model);
             return Ok(new { success = value.result, message = value.mesage, error = value.error });
         }
         [HttpGet]
-        public virtual async Task<IActionResult> Delete(int id)
+        public async Task<IActionResult> Delete(int id)
         {
             var value = await _genericFactory.Delete(id);
             return Ok(new { success = value.result, message = value.mesage, error = value.error });
         }
         [HttpGet]
-        public virtual async Task<IActionResult> Details(int id) 
+        public async Task<IActionResult> Details(int id) 
         {
             var data = await _genericFactory.DetailsById<TViewModel>(id);
             return Ok(new { 
